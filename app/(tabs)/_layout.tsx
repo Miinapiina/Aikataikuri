@@ -10,6 +10,7 @@ import {
 } from "@react-navigation/material-top-tabs";
 import { ParamListBase, TabNavigationState } from "@react-navigation/native";
 import { withLayoutContext } from "expo-router";
+import { View } from 'react-native/types_generated/index';
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -20,15 +21,19 @@ export const MaterialTopTabs = withLayoutContext<
   MaterialTopTabNavigationEventMap
 >(Navigator);
 
+let topBarVisible=false; 
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
-  return (
-    <MaterialTopTabs
+return (
+   <View>
+  <MaterialTopTabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        
+        tabBarStyle: topBarVisible ? {} : { display: 'none' },
       }}>
+
       <MaterialTopTabs.Screen
         name="index"
         options={{
@@ -45,5 +50,6 @@ export default function TabLayout() {
         }}
       />
     </MaterialTopTabs>
-  );
+    </View>)
+  ;
 }
