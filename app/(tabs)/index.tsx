@@ -1,15 +1,13 @@
 import { Viikko } from '@/components/Leviosa';
 import { useFonts } from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function HomeScreen() {
   return (
     <View style={{margin: 3, flexDirection: 'column'}}>
       <Text style={{textAlign: "center"}}>Viikkotaikuri</Text>
-    <SafeAreaProvider>
-        <SafeAreaView style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row'}}>
             <Viikko weekday={0}/>
            <Viikko weekday={1}/>
            <Viikko weekday={2}/>
@@ -17,8 +15,7 @@ export default function HomeScreen() {
            <Viikko weekday={4}/>
            <Viikko weekday={5}/>
            <Viikko weekday={6}/>
-    </SafeAreaView>
-    </SafeAreaProvider>
+    </View>
     </View>
   );
 }
