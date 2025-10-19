@@ -1,6 +1,8 @@
 import { Viikko } from '@/components/Leviosa';
+import { useFonts } from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+
 
 export default function HomeScreen() {
   return (
@@ -8,33 +10,29 @@ export default function HomeScreen() {
       <Text style={{textAlign: "center"}}>Viikkotaikuri</Text>
     <SafeAreaProvider>
         <SafeAreaView style={{flexDirection: 'row'}}>
-          <View style={{height:100, backgroundColor: 'pink', flex: 0.2}} >
             <Viikko weekday={0}/>
-            </View>
-          <View style={{height:100, backgroundColor: 'orange', flex: 0.2}} >
-    <Viikko weekday={1}/>
-    </View>
-    <View style={{height:100, backgroundColor: 'pink', flex: 0.2}}>
-      <Viikko weekday={2}/>
-      </View>
-      <View style={{height:100, backgroundColor: 'orange', flex: 0.2}}>
-      <Viikko weekday={3}/>
-      </View>
-      <View style={{height:100, backgroundColor: 'pink', flex: 0.2}}>
-      <Viikko weekday={4}/>
-      </View>
-      <View style={{height:100, backgroundColor: 'orange', flex: 0.2}}>
-      <Viikko weekday={5}/>
-        </View>
-      <View style={{height:100, backgroundColor: 'pink', flex: 0.2}}>
-      <Viikko weekday={6}/>
-    </View>
+           <Viikko weekday={1}/>
+           <Viikko weekday={2}/>
+           <Viikko weekday={3}/>
+           <Viikko weekday={4}/>
+           <Viikko weekday={5}/>
+           <Viikko weekday={6}/>
     </SafeAreaView>
     </SafeAreaProvider>
     </View>
   );
 }
+const [loaded] = useFonts({
+  'DancingScript-Bold': require('@/assets/fonts/DancingScript-Bold.ttf'),
+});
+
 const styles = StyleSheet.create({
+    title:{
+    textAlign:"center",
+    fontSize:140,
+    fontFamily:"DancingScript-Bold"
+  },
+
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -50,5 +48,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  
   },
 });
