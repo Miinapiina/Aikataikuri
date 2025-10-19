@@ -20,14 +20,14 @@ export default function HomeScreen() {
   );
 }
 const [loaded] = useFonts({
-  'DancingScript-Bold': require('@/assets/fonts/DancingScript-Bold.ttf'),
+  'Sacramento-Regular': require('@/assets/fonts/Sacramento-Regular.ttf'),
 });
 
 const styles = StyleSheet.create({
     title:{
     textAlign:"center",
     fontSize:140,
-    fontFamily:"DancingScript-Bold"
+    fontFamily:"Sacramento-Regular"
   },
 
   titleContainer: {

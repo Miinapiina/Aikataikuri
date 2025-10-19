@@ -1,3 +1,4 @@
+import { useFonts } from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
 export function Viikko ({weekday}){
     let weekdays=["maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai", "sunnuntai"];
@@ -5,7 +6,7 @@ export function Viikko ({weekday}){
     let d=new Date().getDate();
     const adjustedDay = (day + 6) % 7;
     return(
-        <View style={{display: 'flex', flexDirection: 'column', height: '100vh', borderRadius:25, margin: 3, flex:1, backgroundColor: adjustedDay%2===0? 'pink':'orange'}} >
+        <View style={{display: 'flex', flexDirection: 'column', height: '100vh', borderRadius:25, margin: 3, flex:1, backgroundColor: weekday%2===0? 'pink':'orange'}} >
         <View style={{backgroundColor:'purple'}}>
         <Text style={styles.smallTxt}>{weekdays[weekday]}</Text>
         </View>
@@ -14,6 +15,10 @@ export function Viikko ({weekday}){
     );
 
 }
+const [loaded] = useFonts({
+  'Sacramento-Regular': require('@/assets/fonts/Sacramento-Regular.ttf'),
+});
+
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
@@ -23,7 +28,8 @@ const styles = StyleSheet.create({
   smallTxt:{
     textAlign:"center",
     fontSize: 30,
-    color:
+    color:'white',
+    fontFamily:'Sacramento-Regular'
     
   },
   stepContainer: {
