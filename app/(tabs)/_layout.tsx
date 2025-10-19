@@ -10,7 +10,8 @@ import {
 } from "@react-navigation/material-top-tabs";
 import { ParamListBase, TabNavigationState } from "@react-navigation/native";
 import { withLayoutContext } from "expo-router";
-import { View } from 'react-native/types_generated/index';
+import { Button, View } from 'react-native';
+
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -26,8 +27,11 @@ let topBarVisible=false;
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
+const [visible, setVisible] = React.useState(true);
+
 return (
    <View>
+<Button onPress={()=>{setVisible(v => !v)}} title='AIKATAIKURI'></Button> 
   <MaterialTopTabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
