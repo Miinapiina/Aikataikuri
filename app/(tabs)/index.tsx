@@ -1,5 +1,4 @@
 import { Viikko } from '@/components/Leviosa';
-import { Background } from '@react-navigation/elements';
 import { useFonts } from 'expo-font';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -18,7 +17,7 @@ export default function HomeScreen() {
            <Viikko weekday={5}/>
            <Viikko weekday={6}/>
     </View>
-        <View style={Background Color: #908afbff, width 100%}><p>Icon made by Freepik from www.flaticon.com</p></View>
+        <View style={{backgroundColor: '#908afbff', width: '100%'}}><p>Icon made by Freepik from www.flaticon.com</p></View>
         </ScrollView>
     </View>
   );
