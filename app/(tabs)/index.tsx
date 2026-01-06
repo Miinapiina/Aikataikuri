@@ -1,11 +1,12 @@
 import { Viikko } from '@/components/Leviosa';
 import { useFonts } from 'expo-font';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 
 export default function HomeScreen() {
   return (
-    <View style={{margin: 3, flexDirection: 'column'}}>
+    <View style={{margin: 3, flexDirection: 'column', flex: 1 }}>
+      <ScrollView>
       <Text style={{textAlign: "center", fontSize:100, fontFamily: "Sacramento-Regular"}}>Viikkotaikuri</Text>
         <View style={{flexDirection: 'row'}}>
             <Viikko weekday={0}/>
@@ -16,6 +17,8 @@ export default function HomeScreen() {
            <Viikko weekday={5}/>
            <Viikko weekday={6}/>
     </View>
+        <View><p>stff</p></View>
+        </ScrollView>
     </View>
   );
 }

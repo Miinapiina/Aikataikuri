@@ -29,8 +29,9 @@ export default function TabLayout() {
 const [visible, setVisible] = React.useState(false);
 
 return (
-   <View>
+   <View style={{ flex: 1 }}>
 <Button onPress={()=>{setVisible(v => !v)}} title='AIKATAIKURI' color = 'purple'></Button> 
+
   <MaterialTopTabs
       screenOptions={{
         tabBarActiveTintColor: 'pink',
@@ -56,6 +57,7 @@ return (
         }}
       />
     </MaterialTopTabs>
+
     </View>)
   ;
 }
