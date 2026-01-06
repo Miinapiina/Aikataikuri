@@ -57,7 +57,7 @@ return (
         }}
       />
     </MaterialTopTabs>
-
+      <View>Icon made by Freepik from www.flaticon.com</View>
     </View>)
   ;
 }
