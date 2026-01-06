@@ -17,7 +17,9 @@ export default function HomeScreen() {
            <Viikko weekday={5}/>
            <Viikko weekday={6}/>
     </View>
-        <View style={{backgroundColor: '#908afbff', width: '100%'}}><p>Icon made by Freepik from www.flaticon.com</p></View>
+        <View style={{height: '10%', width: '100%'}}><p></p></View>
+        <View style={{backgroundColor: '#908afbff', height: '30%', width: '100%'}}><p>  Credits:
+            Icon made by Freepik from www.flaticon.com</p></View>
         </ScrollView>
     </View>
   );
