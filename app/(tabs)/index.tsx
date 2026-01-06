@@ -6,7 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function HomeScreen() {
   return (
     <View style={{margin: 3, flexDirection: 'column'}}>
-      <Text style={{textAlign: "center"}}>Viikkotaikuri</Text>
+      <Text style={{textAlign: "center", fontSize:100, fontFamily: "Sacramento-Regular"}}>Viikkotaikuri</Text>
         <View style={{flexDirection: 'row'}}>
             <Viikko weekday={0}/>
            <Viikko weekday={1}/>

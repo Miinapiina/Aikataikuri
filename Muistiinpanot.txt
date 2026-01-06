@@ -1,0 +1,15 @@
+haluun et kun vien hiiren jonkin päivän päälle niin se venyttää sen päivän näyttäen siinä olevat muistiinpanot yksityiskohtaisemmin mennen tavallaan muiden päivien päälle kunnes hiiri siirtyy sivuun
+
+Ylhäälle haluan napit
+
+Nämä napit otsikosta/ kun klikkaat niin se siirtyy automaattisesti seuraavaan aikanäkymään
+-päivätaikuri
+-viikkotaikuri
+-kuukausitaikuri
+
+Nämä napit aikataikurin alta
+-profiili
+-kaverit
+-asetukset
+
+Etsi ankkurivideoita tai linkitysvideoita

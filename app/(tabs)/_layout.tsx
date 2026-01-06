@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import {
   createMaterialTopTabNavigator,
@@ -27,22 +26,25 @@ let topBarVisible=false;
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
-const [visible, setVisible] = React.useState(true);
+const [visible, setVisible] = React.useState(false);
 
 return (
    <View>
-<Button onPress={()=>{setVisible(v => !v)}} title='AIKATAIKURI'></Button> 
+<Button onPress={()=>{setVisible(v => !v)}} title='AIKATAIKURI' color = 'purple'></Button> 
   <MaterialTopTabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        tabBarStyle: topBarVisible ? {} : { display: 'none' },
+        tabBarActiveTintColor: 'pink',
+        tabBarInactiveTintColor: 'gray',
+        tabBarIndicatorStyle: { backgroundColor: 'purple' },
+
+        tabBarStyle: visible ? {} : { display: 'none' },
       }}>
 
       <MaterialTopTabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={'pink'} />,
         }}
         
       />
@@ -50,7 +52,7 @@ return (
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={ 'pink' } />,
         }}
       />
     </MaterialTopTabs>
