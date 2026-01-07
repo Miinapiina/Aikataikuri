@@ -1,12 +1,15 @@
 import { Viikko } from '@/components/Leviosa';
+import { Video } from 'expo-av';
 import { useFonts } from 'expo-font';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-
 export default function HomeScreen() {
   return (
+ 
     <View style={{margin: 3, flexDirection: 'column', flex: 1 }}>
+
       <ScrollView>
+      <Video source={require('@/assets/videos/output.mp4')} style={{ width: '100%', height: 300 }} resizeMode="cover" isLooping shouldPlay isMuted />
       <Text style={{textAlign: "center", fontSize:100, fontFamily: "Sacramento-Regular"}}>Viikkotaikuri</Text>
         <View style={{flexDirection: 'row'}}>
             <Viikko weekday={0}/>
@@ -22,6 +25,7 @@ export default function HomeScreen() {
             <Text style={{color: '#ffff'}}>Icon made by Freepik from www.flaticon.com</Text></View>
         </ScrollView>
     </View>
+   
   );
 }
 const [loaded] = useFonts({
