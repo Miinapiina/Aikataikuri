@@ -1,0 +1,55 @@
+import { Viikko } from '@/components/Leviosa';
+import { useFonts } from 'expo-font';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+
+
+export default function HomeScreen() {
+  return (
+    <View style={{margin: 3, flexDirection: 'column', flex: 1 }}>
+      <ScrollView>
+      <Text style={{textAlign: "center", fontSize:100, fontFamily: "Sacramento-Regular"}}>Viikkotaikuri</Text>
+        <View style={{flexDirection: 'row'}}>
+            <Viikko weekday={0}/>
+           <Viikko weekday={1}/>
+           <Viikko weekday={2}/>
+           <Viikko weekday={3}/>
+           <Viikko weekday={4}/>
+           <Viikko weekday={5}/>
+           <Viikko weekday={6}/>
+    </View>
+        <View style={{height: '10%', width: '100%'}}><p></p></View>
+        <View style={{backgroundColor: '#e4e2feff', height: '10%', width: '100%', padding: 20 }}><Text style={{color: #ffff', fontSize: 20}}>  Credits:</Text>
+            <Text style={{color: #ffff}}>Icon made by Freepik from www.flaticon.com</Text></View>
+        </ScrollView>
+    </View>
+  );
+}
+const [loaded] = useFonts({
+  'Sacramento-Regular': require('@/assets/fonts/Sacramento-Regular.ttf'),
+});
+
+const styles = StyleSheet.create({
+    title:{
+    textAlign:"center",
+    fontSize:140,
+    fontFamily:"Sacramento-Regular"
+  },
+
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  stepContainer: {
+    gap: 8,
+    marginBottom: 8,
+  },
+  reactLogo: {
+    height: 178,
+    width: 290,
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+  
+  },
+});
