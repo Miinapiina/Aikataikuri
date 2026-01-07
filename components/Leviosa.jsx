@@ -6,7 +6,7 @@ export function Viikko ({weekday}){
     let d=new Date().getDate();
     const adjustedDay = (day + 6) % 7;
     return(
-        <View style={{display: 'flex', flexDirection: 'column', height: '100vh', borderRadius:15, margin: 3, flex:1, backgroundColor: weekday%2===0? 'pink':'#c8bdefff'}} >
+        <View style={{display: 'flex', flexDirection: 'column', height: '100vh', borderRadius:15, margin: 3, flex:1, backgroundColor: weekday%2===0? '#efb4e6d4':'#c8bdefa1'}} >
         <View style={{backgroundColor:'purple', borderRadius: 15}}>
         <Text style={styles.smallTxt}>{weekdays[weekday]}</Text>
         </View>
