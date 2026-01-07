@@ -6,28 +6,77 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 export default function HomeScreen() {
   return (
  
-    <View style={{margin: 3, flexDirection: 'column', flex: 1 }}>
+import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { Video } from "expo-av";
 
-      <ScrollView>
-      <Video source={require('@/assets/videos/output.mp4')} style={styles.backgroundVideo} resizeMode="cover" shouldPlay isLooping isMuted />
-      <Text style={{textAlign: "center", fontSize:100, fontFamily: "Sacramento-Regular"}}>Viikkotaikuri</Text>
-        <View style={{flexDirection: 'row'}}>
-            <Viikko weekday={0}/>
-           <Viikko weekday={1}/>
-           <Viikko weekday={2}/>
-           <Viikko weekday={3}/>
-           <Viikko weekday={4}/>
-           <Viikko weekday={5}/>
-           <Viikko weekday={6}/>
+export default function Screen() {
+  return (
+    <View style={styles.container}>
+      <Video
+        source={require("@/assets/videos/output.mp4")}
+        style={StyleSheet.absoluteFill}
+        resizeMode="cover"
+        shouldPlay
+        isLooping
+        isMuted
+      />
+
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.title}>Viikkotaikuri</Text>
+
+        <View style={{ flexDirection: "row" }}>
+          <Viikko weekday={0} />
+          <Viikko weekday={1} />
+          <Viikko weekday={2} />
+          <Viikko weekday={3} />
+          <Viikko weekday={4} />
+          <Viikko weekday={5} />
+          <Viikko weekday={6} />
         </View>
-        <View style={{height: '10%', width: '100%'}}><p></p></View>
-        <View style={{backgroundColor: '#e4e2fec2', height: '10%', width: '100%', padding: 20 }}><Text style={{color: '#ffffffff', fontSize: '20'}}>Credits:</Text>
-            <Text style={{color: '#ffff'}}>Icon made by Freepik from www.flaticon.com</Text></View>
-        
-        </ScrollView>
+
+        <View style={{ height: 40, width: "100%" }} />
+
+        <View style={styles.creditsBox}>
+          <Text style={styles.creditsTitle}>Credits:</Text>
+          <Text style={styles.creditsText}>
+            Icon made by Freepik from www.flaticon.com
+          </Text>
+        </View>
+      </ScrollView>
     </View>
-   
   );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, margin: 3 },
+
+  content: {
+    paddingTop: 100,
+    paddingBottom: 40,
+  },
+
+  title: {
+    textAlign: "center",
+    fontSize: 100,
+    fontFamily: "Sacramento-Regular",
+  },
+
+  creditsBox: {
+    backgroundColor: "#e4e2feC2", // OK: 8-digit hex with alpha
+    padding: 20,
+    width: "100%",
+  },
+
+  creditsTitle: {
+    color: "#ffffff",
+    fontSize: 20, // numero, ei string
+  },
+
+  creditsText: {
+    color: "#ffffff",
+  },
+});
+    
 }
 const [loaded] = useFonts({
   'Sacramento-Regular': require('@/assets/fonts/Sacramento-Regular.ttf'),
