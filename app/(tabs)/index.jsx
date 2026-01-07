@@ -9,7 +9,7 @@ export default function HomeScreen() {
     <View style={{margin: 3, flexDirection: 'column', flex: 1 }}>
 
       <ScrollView>
-      <Video source={require('@/assets/videos/output.mp4')} style={{ width: '100%', height: 300 }} resizeMode="cover" isLooping shouldPlay isMuted />
+      <Video source={require('@/assets/videos/output.mp4')} style={styles.backgroundVideo} resizeMode="cover" shouldPlay isLooping isMuted />
       <Text style={{textAlign: "center", fontSize:100, fontFamily: "Sacramento-Regular"}}>Viikkotaikuri</Text>
         <View style={{flexDirection: 'row'}}>
             <Viikko weekday={0}/>
@@ -19,10 +19,11 @@ export default function HomeScreen() {
            <Viikko weekday={4}/>
            <Viikko weekday={5}/>
            <Viikko weekday={6}/>
-    </View>
+        </View>
         <View style={{height: '10%', width: '100%'}}><p></p></View>
         <View style={{backgroundColor: '#e4e2fec2', height: '10%', width: '100%', padding: 20 }}><Text style={{color: '#ffffffff', fontSize: '20'}}>Credits:</Text>
             <Text style={{color: '#ffff'}}>Icon made by Freepik from www.flaticon.com</Text></View>
+        
         </ScrollView>
     </View>
    
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     fontSize:140,
     fontFamily:"Sacramento-Regular"
   },
-
+  backgroundVideo: { position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, width: '100%', height: '100%', },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
